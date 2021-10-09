@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [ // last element has highest priority
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "airbnb-base",
+      "plugin:prettier/recommended" // this includes all prettier rules
+    ],
+    "rules": { // also check .prettierrc rules!
+        "@typescript-eslint/no-explicit-any": "error",
+        "no-unused-vars": "warn"
+    }
+  }
