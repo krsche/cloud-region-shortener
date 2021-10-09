@@ -12,7 +12,13 @@
       "plugin:prettier/recommended" // this includes all prettier rules
     ],
     "rules": { // also check .prettierrc rules!
-        "@typescript-eslint/no-explicit-any": "error",
-        "no-unused-vars": "warn"
+      "no-unused-vars": "off",
+      "no-shadow": "off",
+      "@typescript-eslint/no-explicit-any": "error",
+      "@typescript-eslint/no-shadow": ["error"],
+      "@typescript-eslint/no-unused-vars": ["warn"]
+    },
+    "env": {
+      "jest/globals": true
     }
   }

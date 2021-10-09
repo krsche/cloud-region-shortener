@@ -4,7 +4,7 @@
   "description": "Shorten region names of cloud providers for use in resource names",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "rm -r ./dist || true; tsc",
     "lint": "eslint 'src/**/*.ts'",
     "lint:fix": "eslint --fix 'src/**/*.ts'"
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/krsche/cloud-region-shortener#readme",
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
@@ -36,7 +37,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.2.5",
     "prettier": "^2.4.1",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.4.3"
   }
 }
