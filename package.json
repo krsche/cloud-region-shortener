@@ -1,0 +1,32 @@
+{
+  "name": "cloud-region-shortener",
+  "version": "1.0.0",
+  "description": "Shorten region names of cloud providers for use in resource names",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -r ./dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krsche/cloud-region-shortener.git"
+  },
+  "keywords": [
+    "cloud",
+    "region",
+    "shortener",
+    "azure",
+    "aws",
+    "gcp"
+  ],
+  "author": "krsche",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/krsche/cloud-region-shortener/issues"
+  },
+  "homepage": "https://github.com/krsche/cloud-region-shortener#readme",
+  "devDependencies": {
+    "@types/node": "^16.10.3",
+    "typescript": "^4.4.3"
+  }
+}
