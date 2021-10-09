@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r ./dist && tsc"
+    "build": "rm -r ./dist && tsc",
+    "prettier": "prettier 'src/**/*.ts'",
+    "prettier:fix": "prettier --write 'src/**/*.ts'",
+    "prettier:check": "prettier -c 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
   "homepage": "https://github.com/krsche/cloud-region-shortener#readme",
   "devDependencies": {
     "@types/node": "^16.10.3",
+    "prettier": "^2.4.1",
     "typescript": "^4.4.3"
   }
 }

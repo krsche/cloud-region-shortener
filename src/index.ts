@@ -1,4 +1,3 @@
-
-export default function shortenRegion(region:string): string {
-    return "NotImplemented"
+export default function shortenRegion(region: string): string {
+    return 'NotImplemented';
 }
