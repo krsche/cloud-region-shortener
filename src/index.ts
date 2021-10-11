@@ -31,14 +31,26 @@
 // }
 
 export enum Styles {
-    default = 0,
+    standard = 0,
+    iso3166 = 1,
 }
 
 const regionAbbreviations: { [cloudregion: string]: string[] } = {
-    westeurope: ['weu'],
+    westeurope: ['weu', 'nl'],
 };
 
-export default function getShortRegion(region: string, style: Styles = Styles.default): string {
+let defaultStyle = Styles.standard;
+
+export function getDefaultShortRegionStyle(): Styles {
+    return defaultStyle;
+}
+
+export function setDefaultShortRegionStyle(style = Styles.standard): Styles {
+    defaultStyle = style;
+    return defaultStyle;
+}
+
+export function getShortRegion(region: string, style = defaultStyle): string {
     if (Object.keys(regionAbbreviations).includes(region)) {
         return regionAbbreviations[region][style.valueOf()];
     } else {
