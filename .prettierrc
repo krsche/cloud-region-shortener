@@ -3,5 +3,13 @@
     "arrowParens": "always",
     "semi": true,
     "tabWidth": 4,
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+        {
+            "files": ["*.yaml", "*.yml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
 }
