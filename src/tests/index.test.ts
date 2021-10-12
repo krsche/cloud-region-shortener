@@ -4,9 +4,9 @@ test('get-standard', () => {
     expect(getShortRegion('westeurope')).toBe('weu');
 });
 
-test('get-iso3166', () => {
-    expect(getShortRegion('westeurope', Styles.iso3166)).toBe('nl');
-});
+// test('get-iso3166', () => {
+//     expect(getShortRegion('westeurope', Styles.iso3166)).toBe('nl');
+// });
 
 test('get-unknown', () => {
     expect(() => {
