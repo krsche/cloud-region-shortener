@@ -17,8 +17,8 @@ test('get-unknown', () => {
 test('defaultStyle-get', () => {
     expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
 
-    setDefaultShortRegionStyle(Styles.iso3166);
-    expect(getDefaultShortRegionStyle()).toBe(Styles.iso3166);
+    // setDefaultShortRegionStyle(Styles.iso3166);
+    // expect(getDefaultShortRegionStyle()).toBe(Styles.iso3166);
 
     setDefaultShortRegionStyle(Styles.standard);
     expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
@@ -26,14 +26,14 @@ test('defaultStyle-get', () => {
     expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
 });
 
-test('defaultStyle-iso3166', () => {
-    setDefaultShortRegionStyle(Styles.iso3166);
-    expect(getShortRegion('westeurope')).toBe('nl');
-});
+// test('defaultStyle-iso3166', () => {
+//     setDefaultShortRegionStyle(Styles.iso3166);
+//     expect(getShortRegion('westeurope')).toBe('nl');
+// });
 
-test('defaultStyle-reset', () => {
-    setDefaultShortRegionStyle(Styles.iso3166);
-    expect(getShortRegion('westeurope')).toBe('nl');
-    setDefaultShortRegionStyle();
-    expect(getShortRegion('westeurope')).toBe('weu');
-});
+// test('defaultStyle-reset', () => {
+//     setDefaultShortRegionStyle(Styles.iso3166);
+//     expect(getShortRegion('westeurope')).toBe('nl');
+//     setDefaultShortRegionStyle();
+//     expect(getShortRegion('westeurope')).toBe('weu');
+// });
