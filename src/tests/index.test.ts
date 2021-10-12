@@ -1,12 +1,8 @@
-import { setDefaultShortRegionStyle, getDefaultShortRegionStyle, Styles, getShortRegion } from '../index';
+import { setDefaultStyle, getDefaultStyle, Styles, getShortRegion } from '../index';
 
 test('get-standard', () => {
     expect(getShortRegion('westeurope')).toBe('weu');
 });
-
-// test('get-iso3166', () => {
-//     expect(getShortRegion('westeurope', Styles.iso3166)).toBe('nl');
-// });
 
 test('get-unknown', () => {
     expect(() => {
@@ -15,16 +11,24 @@ test('get-unknown', () => {
 });
 
 test('defaultStyle-get', () => {
-    expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
+    expect(getDefaultStyle()).toBe(Styles.standard);
 
     // setDefaultShortRegionStyle(Styles.iso3166);
     // expect(getDefaultShortRegionStyle()).toBe(Styles.iso3166);
 
+    setDefaultStyle(Styles.standard);
+    expect(getDefaultStyle()).toBe(Styles.standard);
+    setDefaultStyle();
+    expect(getDefaultStyle()).toBe(Styles.standard);
     setDefaultShortRegionStyle(Styles.standard);
     expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
     setDefaultShortRegionStyle();
     expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
 });
+
+// test('get-iso3166', () => {
+//     expect(getShortRegion('westeurope', Styles.iso3166)).toBe('nl');
+// });
 
 // test('defaultStyle-iso3166', () => {
 //     setDefaultShortRegionStyle(Styles.iso3166);

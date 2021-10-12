@@ -128,8 +128,8 @@ Abbreviates the long region name 'as is', while following these rules:
 | unitedstates        | us       |
 | eastasiastage       | eass     |
 | southeastasiastage  | seass    |
-| centraluseuap       | cuseu    |
-| eastus2euap         | eus2eu   |
+| centraluseuap       | cuse     |
+| eastus2euap         | eus2e    |
 | westcentralus       | wcus     |
 | southafricawest     | safw     |
 | australiacentral    | auc      |

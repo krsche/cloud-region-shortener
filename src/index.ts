@@ -1,35 +1,3 @@
-// enum CloudProviders {
-//     Azure,
-// }
-
-// interface IShortenRegion {
-//     (region: string): string;
-// }
-
-// interface IRegionShortener {
-//     readonly cloudProvider: CloudProviders;
-//     readonly shortRegionB1: { [id: string]: string };
-//     readonly regionSynonyms: { [id: string] };
-//     shortenRegion(region: string): string;
-// }
-
-// export class RegionShortenerAzure implements IRegionShortener {
-//     public readonly cloudProvider = CloudProviders.Azure;
-
-//     public readonly shortRegionB1 = {
-//         westeurope: 'euw',
-//     };
-
-//     public readonly regionSynonyms = {
-//         westeurope: ['westeurope', 'westeu'],
-//         westus: ['westus', 'westunitedstates'],
-//     };
-
-//     public shortenRegion = (region: string): string => {
-//         return 'NotImplemented';
-//     };
-// }
-
 export enum Styles {
     standard = 0,
     // iso3166 = 1,
@@ -114,11 +82,11 @@ const regionAbbreviations: { [cloudregion: string]: string[] } = {
 
 let defaultStyle = Styles.standard;
 
-export function getDefaultShortRegionStyle(): Styles {
+export function getDefaultStyle(): Styles {
     return defaultStyle;
 }
 
-export function setDefaultShortRegionStyle(style = Styles.standard): Styles {
+export function setDefaultStyle(style = Styles.standard): Styles {
     defaultStyle = style;
     return defaultStyle;
 }
