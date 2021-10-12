@@ -53,7 +53,6 @@ export function setDefaultShortRegionStyle(style = Styles.standard): Styles {
 export function getShortRegion(region: string, style = defaultStyle): string {
     if (Object.keys(regionAbbreviations).includes(region)) {
         return regionAbbreviations[region][style.valueOf()];
-    } else {
-        throw new Error(`Region '${region}' not recognized as a known region. Shortening not possible!'`);
     }
+    throw new Error(`Region '${region}' not recognized as a known region. Shortening not possible!'`);
 }
