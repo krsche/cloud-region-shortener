@@ -25,9 +25,9 @@ console.log(getShortRegion('westeurope', Styles.iso3166));
 
 ### Default Style
 ```typescript
-import { getShortRegion, Styles, setDefaultShortRegionStyle } from 'cloud-region-shortener'
+import { getShortRegion, Styles, setDefaultStyle } from 'cloud-region-shortener'
 
-setDefaultShortRegionStyle(Styles.iso3166);
+setDefaultStyle(Styles.iso3166);
 console.log(getShortRegion('westeurope'));
 // nl
 ```
