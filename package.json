@@ -2,7 +2,7 @@
     "name": "cloud-region-shortener",
     "version": "1.0.0",
     "description": "Shorten region names of cloud providers for use in resource names",
-    "main": "index.js",
+    "main": "dist/index.js",
     "scripts": {
         "test": "jest",
         "build": "rm -r ./dist || true; tsc",
