@@ -1,1 +1,8 @@
-*.[jt]s[on]* text eol=lf
+* text eol=auto
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.sh text eol=lf
+.bash* text eol=lf

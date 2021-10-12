@@ -20,10 +20,10 @@ test('defaultStyle-get', () => {
     expect(getDefaultStyle()).toBe(Styles.standard);
     setDefaultStyle();
     expect(getDefaultStyle()).toBe(Styles.standard);
-    setDefaultShortRegionStyle(Styles.standard);
-    expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
-    setDefaultShortRegionStyle();
-    expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
+    setDefaultStyle(Styles.standard);
+    expect(getDefaultStyle()).toBe(Styles.standard);
+    setDefaultStyle();
+    expect(getDefaultStyle()).toBe(Styles.standard);
 });
 
 // test('get-iso3166', () => {
