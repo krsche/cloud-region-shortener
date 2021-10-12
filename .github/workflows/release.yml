@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows: ['Test']
+    branches: [main]
+    types: [completed] # doesn't mean it was successful!
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }} # only if Test job completed successfully
+    steps:
+      run: echo "Your release could be created here!"
