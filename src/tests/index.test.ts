@@ -1,4 +1,4 @@
-import { setDefaultStyle, getDefaultStyle, Styles, getShortRegion } from '../index';
+import { setDefaultStyle, getDefaultStyle, getMaxLength, setMaxLength, Styles, getShortRegion } from '../index';
 
 test('get-standard', () => {
     expect(getShortRegion('westeurope')).toBe('weu');
@@ -20,10 +20,21 @@ test('defaultStyle-get', () => {
     expect(getDefaultStyle()).toBe(Styles.standard);
     setDefaultStyle();
     expect(getDefaultStyle()).toBe(Styles.standard);
-    setDefaultShortRegionStyle(Styles.standard);
-    expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
-    setDefaultShortRegionStyle();
-    expect(getDefaultShortRegionStyle()).toBe(Styles.standard);
+});
+
+test('maxLength', () => {
+    setMaxLength(4);
+    expect(getMaxLength()).toBe(4);
+    expect(getShortRegion('eastus2euap')).toBe('eus2');
+    setMaxLength();
+    expect(getMaxLength()).toBe(0);
+    expect(getShortRegion('eastus2euap')).toBe('eus2e');
+});
+
+test('maxLength-negative', () => {
+    expect(() => {
+        setMaxLength(-1);
+    }).toThrow(Error);
 });
 
 // test('get-iso3166', () => {

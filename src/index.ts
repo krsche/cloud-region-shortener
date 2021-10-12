@@ -81,6 +81,14 @@ const regionAbbreviations: { [cloudregion: string]: string[] } = {
 };
 
 let defaultStyle = Styles.standard;
+let maxLength = 0;
+
+function truncate(input: string, len: number) {
+    if (len > 0) {
+        return input.substr(0, len);
+    }
+    return input;
+}
 
 export function getDefaultStyle(): Styles {
     return defaultStyle;
@@ -91,9 +99,21 @@ export function setDefaultStyle(style = Styles.standard): Styles {
     return defaultStyle;
 }
 
-export function getShortRegion(region: string, style = defaultStyle): string {
+export function setMaxLength(length = 0): number {
+    if (length >= 0) {
+        maxLength = length;
+        return maxLength;
+    }
+    throw new Error("Can't set maximum length for abbreviation to a negative value!");
+}
+
+export function getMaxLength(): number {
+    return maxLength;
+}
+
+export function getShortRegion(region: string, style = defaultStyle, pMaxLength = maxLength): string {
     if (Object.keys(regionAbbreviations).includes(region)) {
-        return regionAbbreviations[region][style.valueOf()];
+        return truncate(regionAbbreviations[region][style.valueOf()], pMaxLength);
     }
     throw new Error(`Region '${region}' not recognized as a known region. Shortening not possible!'`);
 }

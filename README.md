@@ -4,6 +4,7 @@
 
 ## Features
 - Convert (long) region names to abbreviated form
+- Specify a maximum length for abbreviations
 - Select from different abbreviation styles (set default style)
 
 ## Usage
@@ -15,22 +16,30 @@ console.log(getShortRegion('westeurope'));
 // weu
 ```
 
-### Other Styles
+### More Options
 ```typescript
 import { getShortRegion, Styles } from 'cloud-region-shortener'
 
-console.log(getShortRegion('westeurope', Styles.iso3166));
+// --- MaxLength ---
+console.log(getShortRegion('northcentralusstage')); 
+// ncuss
+
+console.log(getShortRegion('northcentralusstage')); 
+// ncus
+
+setMaxLength(4);
+console.log(getShortRegion('northcentralusstage')); 
+// ncus
+
+// --- Style ---
+console.log(getShortRegion('westeurope', Styles.iso3166)); // style not supported yet
+// nl
+
+setDefaultStyle(Styles.iso3166); // style not supported yet
+console.log(getShortRegion('westeurope')); // style not supported yet
 // nl
 ```
 
-### Default Style
-```typescript
-import { getShortRegion, Styles, setDefaultShortRegionStyle } from 'cloud-region-shortener'
-
-setDefaultShortRegionStyle(Styles.iso3166);
-console.log(getShortRegion('westeurope'));
-// nl
-```
 
 ## Styles
 The following will demonstrate different style types and rules using regions `germanywestcentral` and `eastus2stage` as an example.
