@@ -1,7 +1,24 @@
+//       _                 _                      _                       _                _
+//   ___| | ___  _   _  __| |      _ __ ___  __ _(_) ___  _ __        ___| |__   ___  _ __| |_ ___ _ __   ___ _ __
+//  / __| |/ _ \| | | |/ _` |_____| '__/ _ \/ _` | |/ _ \| '_ \ _____/ __| '_ \ / _ \| '__| __/ _ \ '_ \ / _ \ '__|
+// | (__| | (_) | |_| | (_| |_____| | |  __/ (_| | | (_) | | | |_____\__ \ | | | (_) | |  | ||  __/ | | |  __/ |
+//  \___|_|\___/ \__,_|\__,_|     |_|  \___|\__, |_|\___/|_| |_|     |___/_| |_|\___/|_|   \__\___|_| |_|\___|_|
+//                                          |___/
+
+// ############################################################################
+// Structures
+// ############################################################################
+
 export enum Styles {
     standard = 0,
     // iso3166 = 1,
 }
+
+// ############################################################################
+// Consts & Variables
+// ############################################################################
+
+let defaultStyle = Styles.standard;
 
 const regionAbbreviations: { [cloudregion: string]: string[] } = {
     eastus: ['eus'],
@@ -80,7 +97,9 @@ const regionAbbreviations: { [cloudregion: string]: string[] } = {
     brazilsoutheast: ['brse'],
 };
 
-let defaultStyle = Styles.standard;
+// ############################################################################
+// Get / Set
+// ############################################################################
 
 export function getDefaultStyle(): Styles {
     return defaultStyle;
@@ -90,6 +109,10 @@ export function setDefaultStyle(style = Styles.standard): Styles {
     defaultStyle = style;
     return defaultStyle;
 }
+
+// ############################################################################
+// Functions
+// ############################################################################
 
 export function getShortRegion(region: string, style = defaultStyle): string {
     if (Object.keys(regionAbbreviations).includes(region)) {
