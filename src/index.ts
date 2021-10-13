@@ -134,7 +134,7 @@ function truncate(input: string, len: number) {
     return input;
 }
 
-export function getShortRegion(region: string, style = defaultStyle, pMaxLength = maxLength): string {  
+export function getShortRegion(region: string, style = defaultStyle, pMaxLength = maxLength): string {
     if (Object.keys(regionAbbreviations).includes(region)) {
         return truncate(regionAbbreviations[region][style.valueOf()], pMaxLength);
     }
