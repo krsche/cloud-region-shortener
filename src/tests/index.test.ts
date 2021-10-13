@@ -33,6 +33,7 @@ test('maxLength', () => {
     setMaxLength();
     expect(getMaxLength()).toBe(0);
     expect(getShortRegion('eastus2euap')).toBe('eus2e');
+    expect(getShortRegion('eastus2euap', Styles.standard, 4)).toBe('eus2');
 });
 
 test('maxLength-negative', () => {
