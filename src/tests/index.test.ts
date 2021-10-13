@@ -20,6 +20,10 @@ test('defaultStyle-get', () => {
     expect(getDefaultStyle()).toBe(Styles.standard);
     setDefaultStyle();
     expect(getDefaultStyle()).toBe(Styles.standard);
+    setDefaultStyle(Styles.standard);
+    expect(getDefaultStyle()).toBe(Styles.standard);
+    setDefaultStyle();
+    expect(getDefaultStyle()).toBe(Styles.standard);
 });
 
 test('maxLength', () => {

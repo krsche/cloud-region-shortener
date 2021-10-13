@@ -24,9 +24,6 @@ import { getShortRegion, Styles } from 'cloud-region-shortener'
 console.log(getShortRegion('northcentralusstage')); 
 // ncuss
 
-console.log(getShortRegion('northcentralusstage')); 
-// ncus
-
 setMaxLength(4);
 console.log(getShortRegion('northcentralusstage')); 
 // ncus

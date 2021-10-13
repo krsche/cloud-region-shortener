@@ -1,7 +1,25 @@
+//       _                 _                      _                       _                _
+//   ___| | ___  _   _  __| |      _ __ ___  __ _(_) ___  _ __        ___| |__   ___  _ __| |_ ___ _ __   ___ _ __
+//  / __| |/ _ \| | | |/ _` |_____| '__/ _ \/ _` | |/ _ \| '_ \ _____/ __| '_ \ / _ \| '__| __/ _ \ '_ \ / _ \ '__|
+// | (__| | (_) | |_| | (_| |_____| | |  __/ (_| | | (_) | | | |_____\__ \ | | | (_) | |  | ||  __/ | | |  __/ |
+//  \___|_|\___/ \__,_|\__,_|     |_|  \___|\__, |_|\___/|_| |_|     |___/_| |_|\___/|_|   \__\___|_| |_|\___|_|
+//                                          |___/
+
+// ############################################################################
+// Structures
+// ############################################################################
+
 export enum Styles {
     standard = 0,
     // iso3166 = 1,
 }
+
+// ############################################################################
+// Consts & Variables
+// ############################################################################
+
+let defaultStyle = Styles.standard;
+let maxLength = 0;
 
 const regionAbbreviations: { [cloudregion: string]: string[] } = {
     eastus: ['eus'],
@@ -80,15 +98,9 @@ const regionAbbreviations: { [cloudregion: string]: string[] } = {
     brazilsoutheast: ['brse'],
 };
 
-let defaultStyle = Styles.standard;
-let maxLength = 0;
-
-function truncate(input: string, len: number) {
-    if (len > 0) {
-        return input.substr(0, len);
-    }
-    return input;
-}
+// ############################################################################
+// Get / Set
+// ############################################################################
 
 export function getDefaultStyle(): Styles {
     return defaultStyle;
@@ -111,7 +123,18 @@ export function getMaxLength(): number {
     return maxLength;
 }
 
-export function getShortRegion(region: string, style = defaultStyle, pMaxLength = maxLength): string {
+// ############################################################################
+// Functions
+// ############################################################################
+
+function truncate(input: string, len: number) {
+    if (len > 0) {
+        return input.substr(0, len);
+    }
+    return input;
+}
+
+export function getShortRegion(region: string, style = defaultStyle, pMaxLength = maxLength): string {  
     if (Object.keys(regionAbbreviations).includes(region)) {
         return truncate(regionAbbreviations[region][style.valueOf()], pMaxLength);
     }
