@@ -157,3 +157,10 @@ Abbreviates the long region name 'as is', while following these rules:
 | ukwest              | ukw      |
 | uaecentral          | uac      |
 | brazilsoutheast     | brse     |
+
+
+## References
+- [Microsoft Cobalt - Azure Services Naming Convention](https://github.com/microsoft/cobalt/wiki/Azure-Services-Naming-Convention)
+- [rpkim/gcp-regions.md - Alterantive naming schemes for GCP reginons](https://gist.github.com/rpkim/084046e02fd8c452ba6ddef3a61d5d59)
+- [ISO3166-1 Codes for the representation of names of countries and their subdivisions – Part 1: Country codes](https://en.wikipedia.org/wiki/ISO_3166-1)
+- [Azure Geographies Overview](https://azure.microsoft.com/en-us/global-infrastructure/geographies/#overview)
